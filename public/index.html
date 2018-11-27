@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand:300,500,700" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Palette Picker</title>
+</head>
+<body>
+  <section class="color-section">
+    <h1 class="main-header">PalettePicker</h1>
+    <div class="color-container">
+      <div class="color color1">
+        <h1></h1>
+        <img src="../images/lock.svg" class="lock-icon" alt="">
+        <h2 class="color-text">#XXXXXX</h2>
+      </div>
+      <div class="color color2">
+        <h1></h1>
+        <img src="../images/lock.svg" class="lock-icon" alt="">
+        <h2 class="color-text">#XXXXXX</h2>
+      </div>
+      <div class="color color3">
+        <h1></h1>
+        <img src="../images/lock.svg" class="lock-icon" alt="">
+        <h2 class="color-text">#XXXXXX</h2>
+      </div>
+      <div class="color color4">
+        <h1></h1>
+        <img src="../images/lock.svg" class="lock-icon" alt="">
+        <h2 class="color-text">#XXXXXX</h2>
+      </div>
+      <div class="color color5">
+        <h1></h1>
+        <img src="../images/lock.svg" class="lock-icon" alt="">
+        <h2 class="color-text">#XXXXXX</h2>
+      </div>
+    </div>
+    <button class="generate-palette-button">Generate New Palette</button>
+    <form class="save-form">
+      <input placeholder="Palette name" type="text" class="palette-name">
+      <select name="project-dropdown" class="project-dropdown" value="Project 1">
+        <option value="option">option</option>
+        <option value="option">option</option>
+        <option value="option">option</option>
+      </select>
+      <!-- <input value="Save Palette" type="submit" class="save-palette"> -->
+    </form>
+  </section>
+  <div class="page-splitter"></div>
+  <section class="project-section">
+    <h3 class="create-project-label">create a new project and</h3>
+    <h3 class="create-project-label">save it to Palette Picker</h3>
+    <form class="create-project">
+      <input type="text" placeholder="New project name" class="project-name">
+      <button class="save-project-button">
+        <img class="save-project-image" src="../images/save.svg" alt="">
+      </button>
+    </form>
+    <section class="project-palette-container">
+    </section>
+  </section>
+</body>
+<script src="js/scripts.js"></script>
+</html>

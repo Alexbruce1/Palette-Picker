@@ -112,11 +112,19 @@ button {
   margin-bottom: 3rem;
 }
 
+.generate-palette-button:hover {
+  box-shadow: 0 1px 1rem rgba(0, 0, 0, .5);
+}
+
 .save-form {
   display: inline-flex;
   justify-content: space-around;
   padding: 0;
   margin-top: 0;
+}
+
+form:hover {
+  box-shadow: 0 1px 1rem rgba(0, 0, 0, .1);
 }
 
 .palette-name,
@@ -140,13 +148,13 @@ button {
 
 .page-splitter {
   background: linear-gradient(to right, transparent, cornflowerblue, transparent);
-  height: 2px;
+  height: 1px;
   margin: 1rem 2%;
   width: 96%;
 }
 
 .create-project-label {
-  color: #666;
+  color: cornflowerblue;
   text-align: center;
   margin: 0;
   width: 100%;

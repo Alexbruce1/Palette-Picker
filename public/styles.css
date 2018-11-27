@@ -9,6 +9,10 @@ body {
   margin: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .color-section,
 .project-section {
   height: 100vh;
@@ -182,7 +186,6 @@ form:focus-within {
 
 .save-project-image {
   height: 90%;
-  margin: 10%;
   width: 90%;
 }
 

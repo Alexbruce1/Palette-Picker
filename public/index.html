@@ -12,31 +12,7 @@
   <section class="color-section">
     <h1 class="main-header">PalettePicker</h1>
     <div class="color-container">
-      <div class="color color1">
-        <h1></h1>
-        <img src="./images/lock.svg" class="lock-icon" alt="">
-        <h2 class="color-text color-text-1">#F1F2EB</h2>
-      </div>
-      <div class="color color2">
-        <h1></h1>
-        <img src="./images/lock.svg" class="lock-icon" alt="">
-        <h2 class="color-text color-text-2">#D8DAD3</h2>
-      </div>
-      <div class="color color3">
-        <h1></h1>
-        <img src="./images/lock.svg" class="lock-icon" alt="">
-        <h2 class="color-text color-text-3">#A4C2A5</h2>
-      </div>
-      <div class="color color4">
-        <h1></h1>
-        <img src="./images/lock.svg" class="lock-icon" alt="">
-        <h2 class="color-text color-text-4">#566246</h2>
-      </div>
-      <div class="color color5">
-        <h1></h1>
-        <img src="./images/lock.svg" class="lock-icon" alt="">
-        <h2 class="color-text color-text-5">#4A4A48</h2>
-      </div>
+
     </div>
     <button class="generate-palette-button">Generate New Palette</button>
     <form class="save-form">
@@ -46,7 +22,9 @@
         <option value="option">option</option>
         <option value="option">option</option>
       </select>
-      <!-- <input value="Save Palette" type="submit" class="save-palette"> -->
+      <div class="save-palette-modal ">
+        <h1 class="modal-h1">Palette Saved</h1>
+      </div>
     </form>
   </section>
   <div class="page-splitter"></div>
@@ -59,11 +37,8 @@
         <img class="save-project-image" src="./images/save.svg" alt="">
       </button>
     </form>
+    <h1 class="project-palette-container-title">Saved Palettes</h1>
     <section class="project-palette-container">
-
-      <article class="saved-palette">
-        
-      </article>
 
     </section>
   </section>

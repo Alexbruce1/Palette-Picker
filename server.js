@@ -9,19 +9,19 @@ let projects = [
 let palettes = [
   {
     name: "asdf",
-    color1: "#2fcca",
-    color2: "#a1c2c1",
-    color3: "#5d39a3",
-    color4: "#964f0b",
-    color5: "#76072b"
+    color1: "#ca68a0",
+    color2: "#c5bdf0",
+    color3: "#a1dac5",
+    color4: "#2d4984",
+    color5: "#1aeef0",
   },
   {
-    name: "asdfgh",
-    color2: "#7f7453",
-    color1: "#200340",
-    color3: "#3b994c",
-    color4: "#4ad984",
-    color5: "#3083f2",
+    name: "asdfg",
+    color1: "#1c63b2",
+    color2: "#768fec",
+    color3: "#a24977",
+    color4: "#4ca795",
+    color5: "#ef0629",
   },
 ];
 
@@ -41,7 +41,7 @@ app.get('/api/v1/palettes', (request, response) => {
 
 app.post('/api/v1/palettes', (request, response) => {
   console.log(request.body)
-  // return response.status(200).json('request was successful');
+  return response.status(200).json('request was successful');
 });
 // 'api/v1/projects/:id/palettes'
 // GET (return all palettes from the back end to the front end)

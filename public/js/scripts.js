@@ -32,7 +32,7 @@ let createColorBlocks = () => {
 
   return randomColors.forEach(color => {
     colorContainer.innerHTML += `
-      <div class="color color${color}" style="background-color:${color}">
+      <div class="color color${randomColors.indexOf(color)}" style="background-color:${color}">
         <h1></h1>
         <img src="./images/lock.svg" class="lock-icon" alt="">
         <h2 class="color-text color-text-1">${color.toUpperCase()}</h2>
@@ -103,18 +103,33 @@ newPaletteForm.addEventListener('submit', (e) => {
     'color5': randomColors[4],
   };
   
-  console.log(JSON.stringify(newPalette));
+  console.log(newPalette);
 
-  let stringifiedPalette = JSON.stringify(newPalette);
+  let postResponse;
   
   fetch('/api/v1/palettes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: stringifiedPalette
+    body: JSON.stringify(newPalette)
   })
-  .then(response => response.json());
+  .then(response => response.json())
+  .then(data => {
+    if (data === 'request was successful') {
+      displaySaveModal();
+    }
+  })
   
   newPaletteName.value = '';
 });
+
+let displaySaveModal = () => {
+  let modal = document.querySelector('.save-palette-modal');
+
+  modal.classList += 'save-palette-modal-show';
+  
+  setTimeout(() => {
+    modal.classList = 'save-palette-modal '
+  }, 1000);
+}

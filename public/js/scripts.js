@@ -21,6 +21,20 @@ let randomColors = [
   getRandomColor()
 ];
 
+colorContainer.addEventListener('click', e => {
+  e.preventDefault();
+
+  let lockedClasslist = 'lock-icon locked';
+  let unlockedClasslist = 'lock-icon unlocked';
+
+  if (e.target.classList.value.includes('lock-icon')) {
+    if (e.target.classList.value === unlockedClasslist) {
+      e.target.classList = lockedClasslist;
+    } else {
+      e.target.classList = unlockedClasslist;
+    }
+  }
+});
 
 window.addEventListener('load', () => {
   createColorBlocks();
@@ -28,13 +42,15 @@ window.addEventListener('load', () => {
 });
 
 let createColorBlocks = () => {
-  colorContainer.innerHTML = ''
+  colorContainer.innerHTML = '';
 
   return randomColors.forEach(color => {
     colorContainer.innerHTML += `
       <div class="color color${randomColors.indexOf(color)}" style="background-color:${color}">
         <h1></h1>
-        <img src="./images/lock.svg" class="lock-icon" alt="">
+        <div class="lock-container">
+          <div class="lock-icon unlocked" ></div>
+        </div>
         <h2 class="color-text color-text-1">${color.toUpperCase()}</h2>
       </div>
     `
@@ -48,8 +64,9 @@ let getSavedPalettes = () => {
     .catch(error => console.log(error.message))
 };
 
-let displaySavedPalettes = (palettes) => {
-  let projectPaletteContainer = document.querySelector('.project-palette-container')
+let displaySavedPalettes = palettes => {
+  let projectPaletteContainer = document.querySelector('.project-palette-container');
+  
   palettes.forEach(palette => {
     projectPaletteContainer.innerHTML += `
       <article class="saved-palette">
@@ -74,7 +91,7 @@ let displaySavedPalettes = (palettes) => {
   })
 }
 
-generateNewPalette.addEventListener('click', (e) => {
+generateNewPalette.addEventListener('click', e => {
   e.preventDefault();
   randomColors = [
     getRandomColor(),
@@ -86,7 +103,7 @@ generateNewPalette.addEventListener('click', (e) => {
   createColorBlocks();
 });
 
-newPaletteForm.addEventListener('submit', (e) => {
+newPaletteForm.addEventListener('submit', e => {
   e.preventDefault();
 
   if (!newPaletteName.value.length) {
@@ -104,8 +121,6 @@ newPaletteForm.addEventListener('submit', (e) => {
   };
   
   console.log(newPalette);
-
-  let postResponse;
   
   fetch('/api/v1/palettes', {
     method: 'POST',
@@ -131,5 +146,5 @@ let displaySaveModal = () => {
   
   setTimeout(() => {
     modal.classList = 'save-palette-modal '
-  }, 1000);
+  }, 1500);
 }
